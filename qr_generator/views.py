@@ -24,7 +24,6 @@ def home(request):
             img = qr.make_image(back_color="black", fill_color="white")
             # Save the QR code as a PNG file with the job order name
             image_name = f"{job_order}.png"
-            img.save(r"C:\Users\Abdallah.Ashry\Desktop\Repo\generate-qr-code\qr_code.png")  
             buffer = BytesIO()
             img.save(buffer)
             buffer.seek(0)
