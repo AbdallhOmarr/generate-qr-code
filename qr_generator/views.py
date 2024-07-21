@@ -12,7 +12,7 @@ def home(request):
 
         if job_order:
             # Create QR code instance
-            qr = qrcode.QRCode(version=1, box_size=100, border=2)
+            qr = qrcode.QRCode(version=1, box_size=50, border=2)
 
             # Add data to the QR code
             qr.add_data(job_order)
@@ -21,7 +21,7 @@ def home(request):
             qr.make(fit=True)
 
             # Create an image from the QR code
-            img = qr.make_image(back_color="black", fill_color="white")
+            img = qr.make_image(back_color="white", fill_color="black")
             # Save the QR code as a PNG file with the job order name
             image_name = f"{job_order}.png"
             buffer = BytesIO()
